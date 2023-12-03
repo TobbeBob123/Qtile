@@ -4,10 +4,10 @@
 #+auto_tangle: t
 
 * Intro
-[[https://gitlab.com/TobbeBob123/qtile/-/blob/054344cfc212874625026f720c0170d35a378e4a/Screenshot/TobbeOS.png]]
+[[https://gitlab.com/TobbeBob123/qtile/-/raw/master/Screenshot/TobbeOS.png]]
 This is my config for Qtile.
-*** TobbeOS colors (Dracula scheme)
-[[https://gitlab.com/TobbeBob123/Xmonad/-/raw/master/Dracula_Colors.png]]
+*** TobbeOS colors (Dracula scheme)[[
+https://gitlab.com/TobbeBob123/Xmonad/-/raw/master/Dracula_Colors.png]]
 
 * About my Config.
 my config file has a feature that let you see my keybindings with a simple keybind (mod4+s).
