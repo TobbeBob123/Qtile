@@ -126,31 +126,6 @@ groups = [
             ], start=1,
     )
 ]
-floating_layout = layout.Floating(
-    float_rules=[
-        # Run the utility of `xprop` to see the wm class and name of an X client.
-        *layout.Floating.default_float_rules,
-        Match(wm_class="confirm"),
-        Match(wm_class="file_progress"),
-        Match(wm_class="dialog"),
-        Match(wm_class="download"),
-        Match(wm_class="error"),
-        Match(wm_class="Nm-connection-editor"),
-        Match(wm_class="Gtk2_prefs"),
-        Match(wm_class="Steam"),
-        Match(wm_class="lunarclient"),
-        Match(wm_class="Yad"),
-        Match(wm_class="fim"),
-        Match(wm_class="Pavucontrol"),
-        Match(wm_class="CoreImage"),
-        Match(wm_class="stacer"),
-        Match(wm_class="Blueman-manager"),
-        Match(wm_class="Geary"),
-        Match(wm_class="kitty"),
-        Match(wm_class="discord"),
-        Match(wm_class="Bitwarden"),
-    ], **layout_theme
-)
 
 group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9",]
 
@@ -254,6 +229,7 @@ main_bar = bar.Bar(
              borderwidth = 1,
              rounded = False,
              highlight_method="line",
+             this_current_screen_border = '#44475a',
              active = "#8be9fd",
              inactive = "#ff79c6"
             ),
@@ -344,6 +320,31 @@ auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True
 
+floating_layout = layout.Floating(
+    float_rules=[
+        # Run the utility of `xprop` to see the wm class and name of an X client.
+        *layout.Floating.default_float_rules,
+        Match(wm_class="confirm"),
+        Match(wm_class="file_progress"),
+        Match(wm_class="dialog"),
+        Match(wm_class="download"),
+        Match(wm_class="error"),
+        Match(wm_class="Nm-connection-editor"),
+        Match(wm_class="Gtk2_prefs"),
+        Match(wm_class="Steam"),
+        Match(wm_class="lunarclient"),
+        Match(wm_class="Yad"),
+        Match(wm_class="fim"),
+        Match(wm_class="Pavucontrol"),
+        Match(wm_class="CoreImage"),
+        Match(wm_class="stacer"),
+        Match(wm_class="Blueman-manager"),
+        Match(wm_class="Geary"),
+        Match(wm_class="kitty"),
+        Match(wm_class="discord"),
+        Match(wm_class="Bitwarden"),
+    ], **layout_theme
+)
 # If things like steam games want to auto-minimize themselves when losing
 # focus, should we respect this or not?
 auto_minimize = True
