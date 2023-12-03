@@ -3,6 +3,20 @@
 #+PROPERTY: header-args :tangle config.py
 #+auto_tangle: t
 
+* Content :toc:
+- [[#intro][Intro]]
+- [[#about-my-config][About my Config.]]
+- [[#import][Import]]
+- [[#variable][Variable]]
+- [[#keys][Keys]]
+- [[#windows-rules][Windows rules]]
+- [[#groupsworkplaces][Groups/Workplaces]]
+- [[#scratchpad][Scratchpad]]
+  - [[#how-to-use-this][How to use this:]]
+-  [[#layouts][Layouts]]
+- [[#statusbar][Statusbar]]
+- [[#startup][Startup]]
+
 * Intro
 [[https://gitlab.com/TobbeBob123/qtile/-/raw/master/Screenshot/TobbeOS.png]]
 This is my config for Qtile.
