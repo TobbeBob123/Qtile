@@ -26,6 +26,7 @@ mySoundPlayer = "ffplay -nodisp -autoexit "
 _NET_WM_STRUT_PARTIAL = 1
 
 keys = [
+    # Programs
     Key([mod], "d", lazy.spawn(myLauncher), desc="Launch program launcher"),
     Key([mod], "Return", lazy.spawn(myEmacs), desc="Launch emacs"),
     Key([mod, "shift"], "Tab", lazy.spawn(myBrowser), desc="Launch web"),
@@ -33,15 +34,18 @@ keys = [
     Key([mod, "shift"], "f", lazy.spawn("pcmanfm"), desc="Launch filebrowser"),
     Key([mod], "m", lazy.spawn("geary"), desc="Launch Mailclient."),
 
+    # System
     Key([mod], "l", lazy.spawn("light-locker-command -l"), desc="Lock the computer"),
     Key([mod], "p", lazy.spawn(expanduser("~/Script/SkjermBilde.sh"), shell=True), desc="Take fullscreen screenshot"),
     Key([mod, "shift"], "p", lazy.spawn(expanduser("~/Script/Flameshot.sh"), shell=True), desc="Take region screenshot"),
     Key([mod], "BackSpace", lazy.spawn(expanduser("~/xmenu/xmenu.sh"), shell=True), desc="Xmenu"),
 
+    # Qtile
     Key([mod, "shift"], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "shift"], "e", lazy.shutdown(), desc="Shutdown Qtile"),
 
+    # Window manage
     Key([mod], "g", lazy.layout.left(), desc="Move focus to left"),
     Key([mod], "h", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
@@ -56,20 +60,16 @@ keys = [
     Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
-    Key(
-        [mod, "shift"],
-        "Return",
-        lazy.layout.toggle_split(),
-        desc="Toggle between split and unsplit sides of stack",
-    ),
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key(
-        [mod],
-        "f",
-        lazy.window.toggle_fullscreen(),
-        desc="Toggle fullscreen on the focused window",
-    ),
     Key([mod], "t", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
+
+    # Layouts
+    Key([mod, "shift"], "Return", lazy.layout.toggle_split(), desc="Toggle between layouts",),
+    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([mod, "shift"], "space", lazy.layout.flip(), desc = "Switch window place"),
+    Key([mod, "control"], "1", lazy.group.setlayout("monadtall"), desc = "Switch to layout MonadTall"),
+    Key([mod, "control"], "2", lazy.group.setlayout("verticaltile"), desc = "Switch to layout VerticalTile"),
+    Key([mod, "control"], "3", lazy.group.setlayout("monadwide"), desc = "Switch to layout MonadWide"),
+    Key([mod, "control"], "4", lazy.group.setlayout("max"), desc = "Switch to layout Max"),
 
     # Sound
     Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
@@ -191,13 +191,13 @@ layouts = [
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
     # layout.Matrix(),
-    # layout.MonadWide(),
     # layout.RatioTile(),
     # layout.Tile(),
     # layout.TreeTab(),
-    # layout.VerticalTile(),
-    # layout.Zoomy(),
     layout.MonadTall(**layout_theme),
+    layout.VerticalTile(**layout_theme),
+    layout.MonadWide(**layout_theme),
+    # layout.Zoomy(),
     layout.Max(),
 ]
 
