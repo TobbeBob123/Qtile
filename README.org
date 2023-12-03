@@ -76,7 +76,6 @@ This is my keys for my program.
 | Mod                    | Super key (Windows key)                                                                                            |
 | control                | Ctrl                                                                                                               |
 | shift                  | Left shift                                                                                                         |
-| xK_?                   | keys on the keyboard. for example mod+xK_s is mod key and the letter s. This will spawn a window with keybindings. |
 |------------------------+--------------------------------------------------------------------------------------------------------------------|
 
 | Important program keys    | Description                                |
