@@ -41,8 +41,8 @@ keys = [
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "shift"], "e", lazy.shutdown(), desc="Shutdown Qtile"),
 
-    Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
-    Key([mod], "g", lazy.layout.right(), desc="Move focus to right"),
+    Key([mod], "g", lazy.layout.left(), desc="Move focus to left"),
+    Key([mod], "h", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
     Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
