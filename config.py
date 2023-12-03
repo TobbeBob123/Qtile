@@ -7,9 +7,10 @@ import re
 import socket
 import subprocess
 from libqtile import qtile
+import qtile_extras
 from qtile_extras import widget
 from qtile_extras.widget.decorations import BorderDecoration
-from libqtile import bar, layout, widget, hook
+from libqtile import bar, layout, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown, Rule
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
@@ -207,7 +208,7 @@ widget_defaults = dict(
     margin_x = 4,
     padding_y = 2,
     padding_x = 3,
-    padding=5
+    padding= 5,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -247,7 +248,14 @@ main_bar = bar.Bar(
             font='Source Code Pro',
             colour_have_updates = '#ff5555',
             no_update_string='No updates',
-            update_interval = 5),
+            update_interval = 5,
+            decorations = [
+                BorderDecoration(
+                    colour = '#50fa7b',
+                    border_width = [0, 0, 2, 0],
+                )
+            ],
+            ),
        widget.Sep(
             background = "#282a36",
             foreground = "#44475a",
@@ -259,6 +267,12 @@ main_bar = bar.Bar(
             fmt = 'Bat:{}',
             show_short_text = False,
             update_interval = 5,
+            decorations = [
+                BorderDecoration(
+                    colour = '#f1fa8c',
+                    border_width = [0, 0, 2, 0],
+                )
+            ],
             ),
        widget.Sep(
             background = "#282a36",
@@ -268,7 +282,14 @@ main_bar = bar.Bar(
        widget.CPU(
             format = 'CPU: {load_percent}%',
             foreground = "#ff76c6",
-            font='Source Code Pro'),
+            font='Source Code Pro',
+            decorations = [
+                BorderDecoration(
+                    colour = '#ff76c6',
+                    border_width = [0, 0, 2, 0],
+                )
+            ],
+        ),
        widget.Sep(
             background = "#282a36",
             foreground = "#44475a",
@@ -278,7 +299,14 @@ main_bar = bar.Bar(
             format = '{MemUsed: .0f}{mm}',
             fmt = 'Mem:{} used',
             foreground = '#ffb86c',
-            font='Source Code Pro'),
+            font='Source Code Pro',
+            decorations = [
+                BorderDecoration(
+                    colour = '#ffb86c',
+                    border_width = [0, 0, 2, 0],
+                )
+            ],
+        ),
        widget.Sep(
             background = "#282a36",
             foreground = "#44475a",
@@ -286,14 +314,29 @@ main_bar = bar.Bar(
             size_percent = 85),
        widget.Volume(
             fmt = 'Vol:{}',
-            foreground = "#50fa7b",
-            font='Source Code Pro'),
+            foreground = "#8be9fd",
+            font='Source Code Pro',
+            decorations = [
+                BorderDecoration(
+                    colour = '#8be9fd',
+                    border_width = [0, 0, 2, 0],
+                )
+            ],
+        ),
        widget.Sep(
             background = "#282a36",
             foreground = "#44475a",
             linewidth = 1,
             size_percent = 85),
-       widget.Clock(format="%H:%M:%S %d-%m-%Y", font='Source Code Pro'),
+       widget.Clock(format="%H:%M:%S %d-%m-%Y", font='Source Code Pro',
+            decorations = [
+                BorderDecoration(
+                    colour = '#f8f8f2',
+                    border_width = [0, 0, 2, 0],
+                )
+            ],
+
+        ),
        widget.Sep(
             background = "#282a36",
             foreground = "#44475a",
@@ -302,7 +345,7 @@ main_bar = bar.Bar(
        widget.Systray(),
        widget.Sep(
             foreground = "#282a36"),
-       ], 30, background= "#282a36", foreground="#44475a", font='Source Code Pro', fontsize=12)
+       ], 30, background= "#282a36", foreground="#f8f8f2", font='Source Code Pro', fontsize=12)
 
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
