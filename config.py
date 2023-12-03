@@ -26,6 +26,7 @@ mySoundPlayer = "ffplay -nodisp -autoexit "
 _NET_WM_STRUT_PARTIAL = 1
 
 keys = [
+    #Start_keys
     # Programs
     Key([mod], "d", lazy.spawn(myLauncher), desc="Launch program launcher"),
     Key([mod], "Return", lazy.spawn(myEmacs), desc="Launch emacs"),
@@ -34,11 +35,22 @@ keys = [
     Key([mod, "shift"], "f", lazy.spawn("pcmanfm"), desc="Launch filebrowser"),
     Key([mod], "m", lazy.spawn("geary"), desc="Launch Mailclient."),
 
+    #Keys for the scratchpad
+    Key([mod], "e", lazy.group["sp"].dropdown_toggle("term"), desc="Launch terminal"),
+    Key([mod, "shift"], "n", lazy.group["sp"].dropdown_toggle("nm"), desc="Launch Nm-connection-editor. An Network GUI manager"),
+    Key([mod, "shift"], "l", lazy.group["sp"].dropdown_toggle("audio"), desc="Launch Pavucontrol. An Volume GUI manager"),
+    Key([mod], "b", lazy.group["sp"].dropdown_toggle("blue"), desc="Launch Bluetooth Gui."),
+    Key([mod, "shift"], "b", lazy.group["sp"].dropdown_toggle("bit"), desc="Launch bitwarden."),
+
     # System
     Key([mod], "l", lazy.spawn("light-locker-command -l"), desc="Lock the computer"),
     Key([mod], "p", lazy.spawn(expanduser("~/Script/SkjermBilde.sh"), shell=True), desc="Take fullscreen screenshot"),
     Key([mod, "shift"], "p", lazy.spawn(expanduser("~/Script/Flameshot.sh"), shell=True), desc="Take region screenshot"),
     Key([mod], "BackSpace", lazy.spawn(expanduser("~/xmenu/xmenu.sh"), shell=True), desc="Xmenu"),
+
+    # Show keys and fish alias
+    Key([mod, "shift"], "s", lazy.spawn(expanduser("~/.config/fish/alias.sh"), shell=True), desc="Show fish alias"),
+    Key([mod], "s", lazy.spawn(expanduser("~/.config/qtile/Scripts/keys.sh"), shell=True), desc="Show keys"),
 
     # Qtile
     Key([mod, "shift"], "q", lazy.window.kill(), desc="Kill focused window"),
@@ -86,6 +98,7 @@ mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
     Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
     Click([mod], "Button2", lazy.window.bring_to_front()),
+#End_keys
 ]
 
 groups = [
@@ -171,14 +184,6 @@ groups.append(ScratchPad('sp', [
     DropDown("steam", 'steam', width=0.4, x=0.3, y=0.2, opacity=1),
     DropDown("bit", 'bitwarden-desktop', width=0.4, x=0.3, y=0.2, opacity=1),
 ]))
-
-keys.extend([
-    Key([mod], "e", lazy.group["sp"].dropdown_toggle("term"), desc="Launch terminal"),
-    Key([mod, "shift"], "n", lazy.group["sp"].dropdown_toggle("nm"), desc="Launch Nm-connection-editor. An Network GUI manager"),
-    Key([mod, "shift"], "l", lazy.group["sp"].dropdown_toggle("audio"), desc="Launch Pavucontrol. An Volume GUI manager"),
-    Key([mod], "b", lazy.group["sp"].dropdown_toggle("blue"), desc="Launch Bluetooth Gui."),
-    Key([mod, "shift"], "b", lazy.group["sp"].dropdown_toggle("bit"), desc="Launch bitwarden."),
-])
 
 layout_theme = {
     "border_width": 1,
