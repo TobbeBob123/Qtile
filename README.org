@@ -4,7 +4,7 @@
 #+auto_tangle: t
 
 * Intro
-(bilde)
+[[https://gitlab.com/TobbeBob123/qtile/-/blob/054344cfc212874625026f720c0170d35a378e4a/Screenshot/TobbeOS.png]]
 This is my config for Qtile.
 *** TobbeOS colors (Dracula scheme)
 [[https://gitlab.com/TobbeBob123/Xmonad/-/raw/master/Dracula_Colors.png]]
