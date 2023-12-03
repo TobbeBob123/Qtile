@@ -369,6 +369,18 @@ main_bar = bar.Bar(
             foreground = "#44475a",
             linewidth = 1,
             size_percent = 85),
+       widget.Battery(
+            foreground = '#f1fa8c',
+            format = '{percent:2.0%}',
+            fmt = 'Bat:{}',
+            show_short_text = False,
+            update_interval = 5,
+            ),
+       widget.Sep(
+            background = "#282a36",
+            foreground = "#44475a",
+            linewidth = 1,
+            size_percent = 85),
        widget.CPU(
             format = 'CPU: {load_percent}%',
             foreground = "#ff76c6",
@@ -397,7 +409,7 @@ main_bar = bar.Bar(
             foreground = "#44475a",
             linewidth = 1,
             size_percent = 85),
-       widget.Clock(format="%H-%M-%S %d:%m %Y", font='Source Code Pro'),
+       widget.Clock(format="%H:%M:%S %d-%m-%Y", font='Source Code Pro'),
        widget.Sep(
             background = "#282a36",
             foreground = "#44475a",
