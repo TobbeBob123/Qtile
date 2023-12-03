@@ -247,7 +247,7 @@ main_bar = bar.Bar(
             font='Source Code Pro',
             colour_have_updates = '#ff5555',
             no_update_string='No updates',
-            update_interval = 60),
+            update_interval = 5),
        widget.Sep(
             background = "#282a36",
             foreground = "#44475a",
