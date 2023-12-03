@@ -247,12 +247,31 @@ main_bar = bar.Bar(
        widget.CurrentLayout(
             font='Source Code Pro'),
        widget.Spacer(lenght = 8),
-       widget.CheckUpdates(
-            custom_command = 'paru -Qu',
-            colour_no_updates = '#50fa7b',
+       widget.GenPollCommand(
+            fmt = 'Installed:{}',
+            cmd = '~/.config/qtile/Scripts/Packagecount.sh',
+            shell = True,
+            foreground = '#8be9fd',
             font='Source Code Pro',
-            colour_have_updates = '#ff5555',
-            no_update_string='No updates',
+            update_interval = 5,
+            decorations = [
+                BorderDecoration(
+                    colour = '#8be9fd',
+                    border_width = [0, 0, 2, 0],
+                )
+            ],
+       ),
+       widget.Sep(
+            background = "#282a36",
+            foreground = "#44475a",
+            linewidth = 1,
+            size_percent = 85),
+       widget.GenPollCommand(
+            fmt = 'Updates:{}',
+            cmd = '~/.config/qtile/Scripts/Updates.sh',
+            shell = True,
+            foreground = '#50fa7b',
+            font='Source Code Pro',
             update_interval = 5,
             decorations = [
                 BorderDecoration(
@@ -260,7 +279,7 @@ main_bar = bar.Bar(
                     border_width = [0, 0, 2, 0],
                 )
             ],
-            ),
+       ),
        widget.Sep(
             background = "#282a36",
             foreground = "#44475a",
