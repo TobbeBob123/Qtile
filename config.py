@@ -229,6 +229,8 @@ def updates():
     home = os.path.expanduser('~')
     qtile.cmd_spawn(home + '/.config/qtile/Scripts/checkupdate.sh', shell=True)
 
+def Pavucontrol():
+    qtile.cmd_spawn('pavucontrol')
 
 main_bar = bar.Bar(
     [
@@ -373,6 +375,7 @@ main_bar = bar.Bar(
             fmt = 'Vol:{}',
             foreground = "#8be9fd",
             font='Source Code Pro',
+            mouse_callbacks = {'Button1': Pavucontrol},
             decorations = [
                 BorderDecoration(
                     colour = '#8be9fd',
