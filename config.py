@@ -6,11 +6,10 @@ from os.path import expanduser
 import re
 import socket
 import subprocess
-from libqtile import qtile
+from libqtile import qtile, widget, extension, bar, layout, hook
 import qtile_extras
 from qtile_extras import widget
 from qtile_extras.widget.decorations import BorderDecoration
-from libqtile import bar, layout, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown, Rule
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
@@ -219,6 +218,18 @@ extension_defaults = widget_defaults.copy()
 
 window_name = widget.WindowName()
 
+def show_cpu():
+    qtile.cmd_spawn('kitty -e htop')
+
+def package():
+    home = os.path.expanduser('~')
+    qtile.cmd_spawn(home + '/.config/qtile/Scripts/AntallPakker.sh', shell=True)
+
+def updates():
+    home = os.path.expanduser('~')
+    qtile.cmd_spawn(home + '/.config/qtile/Scripts/checkupdate.sh', shell=True)
+
+
 main_bar = bar.Bar(
     [
         widget.Sep(
@@ -248,12 +259,31 @@ main_bar = bar.Bar(
             font='Source Code Pro'),
        widget.Spacer(lenght = 8),
        widget.GenPollCommand(
+            cmd = 'uname -r',
+            shell = True,
+            foreground = '#bd93f9',
+            font='Source Code Pro',
+            update_interval = 5,
+            decorations = [
+                BorderDecoration(
+                    colour = '#bd93f9',
+                    border_width = [0, 0, 2, 0],
+                )
+            ],
+       ),
+       widget.Sep(
+            background = "#282a36",
+            foreground = "#44475a",
+            linewidth = 1,
+            size_percent = 85),
+       widget.GenPollCommand(
             fmt = 'Installed:{}',
             cmd = '~/.config/qtile/Scripts/Packagecount.sh',
             shell = True,
             foreground = '#8be9fd',
             font='Source Code Pro',
             update_interval = 5,
+            mouse_callbacks = {'Button1': package},
             decorations = [
                 BorderDecoration(
                     colour = '#8be9fd',
@@ -273,6 +303,7 @@ main_bar = bar.Bar(
             foreground = '#50fa7b',
             font='Source Code Pro',
             update_interval = 5,
+            mouse_callbacks = {'Button1': updates},
             decorations = [
                 BorderDecoration(
                     colour = '#50fa7b',
@@ -307,6 +338,7 @@ main_bar = bar.Bar(
             format = 'CPU: {load_percent}%',
             foreground = "#ff76c6",
             font='Source Code Pro',
+            mouse_callbacks = {'Button1': show_cpu},
             decorations = [
                 BorderDecoration(
                     colour = '#ff76c6',
@@ -324,6 +356,7 @@ main_bar = bar.Bar(
             fmt = 'Mem:{} used',
             foreground = '#ffb86c',
             font='Source Code Pro',
+            mouse_callbacks = {'Button1': show_cpu},
             decorations = [
                 BorderDecoration(
                     colour = '#ffb86c',
