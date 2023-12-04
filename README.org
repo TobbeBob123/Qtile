@@ -334,6 +334,11 @@ main_bar = bar.Bar(
             filename = '~/.config/qtile/icon/TobbeOS_logo_q.xpm',
             mouse_callbacks = {'Button1': xmenu},
             scale = False),
+       widget.Sep(
+            background = "#282a36",
+            foreground = "#44475a",
+            linewidth = 1,
+            size_percent = 85),
         widget.GroupBox(
              fontsize = 11,
              margin_y = 3,
