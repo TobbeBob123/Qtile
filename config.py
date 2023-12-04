@@ -232,13 +232,19 @@ def updates():
 def Pavucontrol():
     qtile.cmd_spawn('pavucontrol')
 
+def xmenu():
+    home = os.path.expanduser('~')
+    qtile.cmd_spawn(home + '/xmenu/xmenu.sh', shell=True)
+
 main_bar = bar.Bar(
     [
         widget.Sep(
             background="#282a36",
             foreground="#282a36"),
         widget.Image(
-            filename = '~/.config/qtile/icon/logo.xpm'),
+            filename = '~/.config/qtile/icon/TobbeOS_logo_q.xpm',
+            mouse_callbacks = {'Button1': xmenu},
+            scale = False),
         widget.GroupBox(
              fontsize = 11,
              margin_y = 3,
