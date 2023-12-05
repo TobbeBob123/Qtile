@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-yay -Qu | wc -l
+checkupdates | wc -l
