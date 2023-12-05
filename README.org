@@ -398,11 +398,12 @@ main_bar = bar.Bar(
             foreground = "#44475a",
             linewidth = 1,
             size_percent = 85),
-       widget.GenPollCommand(
-            fmt = 'Updates:{}',
-            cmd = '~/.config/qtile/Scripts/Updates.sh',
-            shell = True,
-            foreground = '#50fa7b',
+       widget.CheckUpdates(
+            custom_command = 'checkupdates',
+            distro = 'Arch',
+            colour_have_updates = 'ff5555',
+            colour_no_updates = '50fa7b',
+            no_update_string = 'no updates',
             font='Source Code Pro',
             update_interval = 5,
             mouse_callbacks = {'Button1': updates},
