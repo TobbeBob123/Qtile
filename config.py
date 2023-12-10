@@ -8,6 +8,7 @@ import socket
 import subprocess
 from libqtile import qtile, widget, extension, bar, layout, hook
 import qtile_extras
+from qtile_extras.widget.decorations import PowerLineDecoration
 from qtile_extras import widget
 from qtile_extras.widget.decorations import BorderDecoration
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown, Rule
@@ -236,6 +237,12 @@ def xmenu():
     home = os.path.expanduser('~')
     qtile.cmd_spawn(home + '/xmenu/xmenu.sh', shell=True)
 
+powerline = {
+    "decorations": [
+        PowerLineDecoration(path="arrow_right")
+    ]
+}
+
 main_bar = bar.Bar(
     [
         widget.Sep(
@@ -272,149 +279,72 @@ main_bar = bar.Bar(
        widget.CurrentLayout(
             font='Source Code Pro'),
        widget.Spacer(lenght = 8),
+       widget.TextBox(**powerline),
        widget.GenPollCommand(
             cmd = 'uname -r',
             shell = True,
-            foreground = '#bd93f9',
+            background = "#bd93f9",
+            foreground = "#282a36",
             font='Source Code Pro',
             update_interval = 5,
-            decorations = [
-                BorderDecoration(
-                    colour = '#bd93f9',
-                    border_width = [0, 0, 2, 0],
-                )
-            ],
-       ),
-       widget.Sep(
-            background = "#282a36",
-            foreground = "#44475a",
-            linewidth = 1,
-            size_percent = 85),
+            **powerline),
        widget.GenPollCommand(
             fmt = 'Installed:{}',
             cmd = '~/.config/qtile/Scripts/Packagecount.sh',
             shell = True,
-            foreground = '#8be9fd',
             font='Source Code Pro',
             update_interval = 5,
             mouse_callbacks = {'Button1': package},
-            decorations = [
-                BorderDecoration(
-                    colour = '#8be9fd',
-                    border_width = [0, 0, 2, 0],
-                )
-            ],
-       ),
-       widget.Sep(
-            background = "#282a36",
-            foreground = "#44475a",
-            linewidth = 1,
-            size_percent = 85),
+            background = '#8be9fd',
+            foreground = '#282a36',
+            **powerline),
        widget.CheckUpdates(
             custom_command = 'checkupdates',
             distro = 'Arch',
-            colour_have_updates = 'ff5555',
-            colour_no_updates = '50fa7b',
+            background = "#50fa7b",
+            colour_have_updates = '#282a36',
+            colour_no_updates = '282a36',
             no_update_string = 'no updates',
             font='Source Code Pro',
             update_interval = 5,
             mouse_callbacks = {'Button1': updates},
-            decorations = [
-                BorderDecoration(
-                    colour = '#50fa7b',
-                    border_width = [0, 0, 2, 0],
-                )
-            ],
-       ),
-       widget.Sep(
-            background = "#282a36",
-            foreground = "#44475a",
-            linewidth = 1,
-            size_percent = 85),
+            **powerline),
        widget.Battery(
-            foreground = '#f1fa8c',
             format = '{percent:2.0%}',
             fmt = 'Bat:{}',
             show_short_text = False,
             update_interval = 5,
-            decorations = [
-                BorderDecoration(
-                    colour = '#f1fa8c',
-                    border_width = [0, 0, 2, 0],
-                )
-            ],
-            ),
-       widget.Sep(
-            background = "#282a36",
-            foreground = "#44475a",
-            linewidth = 1,
-            size_percent = 85),
+            background = '#f1fa8c',
+            foreground = '#282a36',
+            **powerline),
        widget.CPU(
             format = 'CPU: {load_percent}%',
-            foreground = "#ff76c6",
+            foreground = "#282a36",
+            background = "#ff76c6",
             font='Source Code Pro',
             mouse_callbacks = {'Button1': show_cpu},
-            decorations = [
-                BorderDecoration(
-                    colour = '#ff76c6',
-                    border_width = [0, 0, 2, 0],
-                )
-            ],
-        ),
-       widget.Sep(
-            background = "#282a36",
-            foreground = "#44475a",
-            linewidth = 1,
-            size_percent = 85),
+            **powerline),
        widget.Memory(
             format = '{MemUsed: .0f}{mm}',
             fmt = 'Mem:{} used',
-            foreground = '#ffb86c',
+            foreground = '#282a36',
+            background = "#ffb86c",
             font='Source Code Pro',
             mouse_callbacks = {'Button1': show_cpu},
-            decorations = [
-                BorderDecoration(
-                    colour = '#ffb86c',
-                    border_width = [0, 0, 2, 0],
-                )
-            ],
-        ),
-       widget.Sep(
-            background = "#282a36",
-            foreground = "#44475a",
-            linewidth = 1,
-            size_percent = 85),
+            **powerline),
        widget.Volume(
             fmt = 'Vol:{}',
-            foreground = "#8be9fd",
+            foreground = "#282a36",
+            background = "#8be9fd",
             font='Source Code Pro',
             mouse_callbacks = {'Button1': Pavucontrol},
-            decorations = [
-                BorderDecoration(
-                    colour = '#8be9fd',
-                    border_width = [0, 0, 2, 0],
-                )
-            ],
-        ),
-       widget.Sep(
-            background = "#282a36",
-            foreground = "#44475a",
-            linewidth = 1,
-            size_percent = 85),
-       widget.Clock(format="%H:%M:%S %d-%m-%Y", font='Source Code Pro',
-            decorations = [
-                BorderDecoration(
-                    colour = '#f8f8f2',
-                    border_width = [0, 0, 2, 0],
-                )
-            ],
-
-        ),
-       widget.Sep(
-            background = "#282a36",
-            foreground = "#44475a",
-            linewidth = 1,
-            size_percent = 85),
+            **powerline),
+       widget.Clock(
+           format="%H:%M:%S %d-%m-%Y",
+           font='Source Code Pro',
+           **powerline,
+           background = "#f8f8f2",
+           foreground = "#282a36"),
        widget.Systray(),
        widget.Sep(
             foreground = "#282a36"),
