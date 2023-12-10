@@ -245,7 +245,7 @@ powerline = {
 
 main_bar = bar.Bar(
     [
-        widget.Sep(
+widget.Sep(
             background="#282a36",
             foreground="#282a36"),
         widget.Image(
@@ -279,78 +279,153 @@ main_bar = bar.Bar(
        widget.CurrentLayout(
             font='Source Code Pro'),
        widget.Spacer(lenght = 8),
-       widget.CheckUpdates(
-            custom_command = 'checkupdates',
-            distro = 'Arch',
-            background = "#282a36",
-            colour_have_updates = "#ff5555",
-            colour_no_updates = '#50fa7b',
-            no_update_string = 'no updates',
-            font='Source Code Pro',
-            update_interval = 5,
-            mouse_callbacks = {'Button1': updates},
-            **powerline),
        widget.GenPollCommand(
             cmd = 'uname -r',
             shell = True,
-            background = "#bd93f9",
-            foreground = "#282a36",
+            foreground = '#bd93f9',
             font='Source Code Pro',
             update_interval = 5,
-            **powerline),
+            decorations = [
+                BorderDecoration(
+                    colour = '#bd93f9',
+                    border_width = [0, 0, 2, 0],
+                )
+            ],
+       ),
+       widget.Sep(
+            background = "#282a36",
+            foreground = "#44475a",
+            linewidth = 1,
+            size_percent = 85),
        widget.GenPollCommand(
             fmt = 'Installed:{}',
             cmd = '~/.config/qtile/Scripts/Packagecount.sh',
             shell = True,
+            foreground = '#8be9fd',
             font='Source Code Pro',
             update_interval = 5,
             mouse_callbacks = {'Button1': package},
-            background = '#8be9fd',
-            foreground = '#282a36',
-            **powerline),
+            decorations = [
+                BorderDecoration(
+                    colour = '#8be9fd',
+                    border_width = [0, 0, 2, 0],
+                )
+            ],
+       ),
+       widget.Sep(
+            background = "#282a36",
+            foreground = "#44475a",
+            linewidth = 1,
+            size_percent = 85),
+       widget.CheckUpdates(
+            custom_command = 'checkupdates',
+            distro = 'Arch',
+            colour_have_updates = 'ff5555',
+            colour_no_updates = '50fa7b',
+            no_update_string = 'no updates',
+            font='Source Code Pro',
+            update_interval = 5,
+            mouse_callbacks = {'Button1': updates},
+            decorations = [
+                BorderDecoration(
+                    colour = '#50fa7b',
+                    border_width = [0, 0, 2, 0],
+                )
+            ],
+       ),
+       widget.Sep(
+            background = "#282a36",
+            foreground = "#44475a",
+            linewidth = 1,
+            size_percent = 85),
        widget.Battery(
+            foreground = '#f1fa8c',
             format = '{percent:2.0%}',
             fmt = 'Bat:{}',
             show_short_text = False,
             update_interval = 5,
-            background = '#f1fa8c',
-            foreground = '#282a36',
-            **powerline),
+            decorations = [
+                BorderDecoration(
+                    colour = '#f1fa8c',
+                    border_width = [0, 0, 2, 0],
+                )
+            ],
+            ),
+       widget.Sep(
+            background = "#282a36",
+            foreground = "#44475a",
+            linewidth = 1,
+            size_percent = 85),
        widget.CPU(
             format = 'CPU: {load_percent}%',
-            foreground = "#282a36",
-            background = "#ff76c6",
+            foreground = "#ff76c6",
             font='Source Code Pro',
             mouse_callbacks = {'Button1': show_cpu},
-            **powerline),
+            decorations = [
+                BorderDecoration(
+                    colour = '#ff76c6',
+                    border_width = [0, 0, 2, 0],
+                )
+            ],
+        ),
+       widget.Sep(
+            background = "#282a36",
+            foreground = "#44475a",
+            linewidth = 1,
+            size_percent = 85),
        widget.Memory(
             format = '{MemUsed: .0f}{mm}',
             fmt = 'Mem:{} used',
-            foreground = '#282a36',
-            background = "#ffb86c",
+            foreground = '#ffb86c',
             font='Source Code Pro',
             mouse_callbacks = {'Button1': show_cpu},
-            **powerline),
+            decorations = [
+                BorderDecoration(
+                    colour = '#ffb86c',
+                    border_width = [0, 0, 2, 0],
+                )
+            ],
+        ),
+       widget.Sep(
+            background = "#282a36",
+            foreground = "#44475a",
+            linewidth = 1,
+            size_percent = 85),
        widget.Volume(
             fmt = 'Vol:{}',
-            foreground = "#282a36",
-            background = "#8be9fd",
+            foreground = "#8be9fd",
             font='Source Code Pro',
             mouse_callbacks = {'Button1': Pavucontrol},
-            **powerline),
-       widget.Clock(
-           format="%H:%M:%S %d-%m-%Y",
-           font='Source Code Pro',
-           **powerline,
-           background = "#f8f8f2",
-           foreground = "#282a36"),
+            decorations = [
+                BorderDecoration(
+                    colour = '#8be9fd',
+                    border_width = [0, 0, 2, 0],
+                )
+            ],
+        ),
+       widget.Sep(
+            background = "#282a36",
+            foreground = "#44475a",
+            linewidth = 1,
+            size_percent = 85),
+       widget.Clock(format="%H:%M:%S %d-%m-%Y", font='Source Code Pro',
+            decorations = [
+                BorderDecoration(
+                    colour = '#f8f8f2',
+                    border_width = [0, 0, 2, 0],
+                )
+            ],
+
+        ),
+       widget.Sep(
+            background = "#282a36",
+            foreground = "#44475a",
+            linewidth = 1,
+            size_percent = 85),
        widget.Systray(),
        widget.Sep(
             foreground = "#282a36"),
        ], 30, background= "#282a36", foreground="#f8f8f2", font='Source Code Pro', fontsize=12)
-
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
 
 main_screen = Screen(top=main_bar)
 screens = [main_screen]
