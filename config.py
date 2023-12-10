@@ -279,7 +279,17 @@ main_bar = bar.Bar(
        widget.CurrentLayout(
             font='Source Code Pro'),
        widget.Spacer(lenght = 8),
-       widget.TextBox(**powerline),
+       widget.CheckUpdates(
+            custom_command = 'checkupdates',
+            distro = 'Arch',
+            background = "#282a36",
+            colour_have_updates = "#ff5555",
+            colour_no_updates = '#50fa7b',
+            no_update_string = 'no updates',
+            font='Source Code Pro',
+            update_interval = 5,
+            mouse_callbacks = {'Button1': updates},
+            **powerline),
        widget.GenPollCommand(
             cmd = 'uname -r',
             shell = True,
@@ -297,17 +307,6 @@ main_bar = bar.Bar(
             mouse_callbacks = {'Button1': package},
             background = '#8be9fd',
             foreground = '#282a36',
-            **powerline),
-       widget.CheckUpdates(
-            custom_command = 'checkupdates',
-            distro = 'Arch',
-            background = "#50fa7b",
-            colour_have_updates = '#282a36',
-            colour_no_updates = '282a36',
-            no_update_string = 'no updates',
-            font='Source Code Pro',
-            update_interval = 5,
-            mouse_callbacks = {'Button1': updates},
             **powerline),
        widget.Battery(
             format = '{percent:2.0%}',
