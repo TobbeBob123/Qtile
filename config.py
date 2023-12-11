@@ -227,8 +227,7 @@ def package():
     qtile.cmd_spawn(home + '/.config/qtile/Scripts/AntallPakker.sh', shell=True)
 
 def updates():
-    home = os.path.expanduser('~')
-    qtile.cmd_spawn(home + '/.config/qtile/Scripts/checkupdate.sh', shell=True)
+    qtile.cmd_spawn('kitty -e paru')
 
 def Pavucontrol():
     qtile.cmd_spawn('pavucontrol')
