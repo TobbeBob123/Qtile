@@ -355,6 +355,28 @@ widget.Sep(
             foreground = "#44475a",
             linewidth = 1,
             size_percent = 85),
+       widget.DF(
+            format = '{uf}{m}|{r}%',
+            fmt = 'Disk:{}',
+            warn_space = 40,
+            visible_on_warn = False,
+            warn_color = '#ff5555',
+            partition = '/',
+            foreground = '#6272a4',
+            font='Source Code Pro',
+            update_interval = 5,
+            decorations = [
+                BorderDecoration(
+                    colour = '#6272a4',
+                    border_width = [0, 0, 2, 0],
+                )
+            ],
+       ),
+       widget.Sep(
+            background = "#282a36",
+            foreground = "#44475a",
+            linewidth = 1,
+            size_percent = 85),
        widget.CPU(
             format = 'CPU: {load_percent}%',
             foreground = "#ff76c6",
