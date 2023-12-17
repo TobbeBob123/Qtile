@@ -236,11 +236,11 @@ def xmenu():
     home = os.path.expanduser('~')
     qtile.cmd_spawn(home + '/xmenu/xmenu.sh', shell=True)
 
-powerline = {
-    "decorations": [
-        PowerLineDecoration(path="arrow_right")
-    ]
-}
+#powerline = {
+ #   "decorations": [
+  #      PowerLineDecoration(path="arrow_right")
+   # ]
+#}
 
 main_bar = bar.Bar(
     [
@@ -356,8 +356,8 @@ widget.Sep(
             linewidth = 1,
             size_percent = 85),
        widget.DF(
-            format = '{r}%',
-            fmt = 'Disk:{}',
+            format = '{r: .0f}%',
+            fmt = 'Used Disk:{}',
             warn_space = 40,
             visible_on_warn = False,
             warn_color = '#ff5555',
