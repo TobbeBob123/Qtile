@@ -318,6 +318,9 @@ def package():
 def updates():
     qtile.cmd_spawn('kitty -e paru')
 
+def cleandisk():
+    qtile.cmd_spawn('kitty -e sudo pacman -Sc')
+
 def Pavucontrol():
     qtile.cmd_spawn('pavucontrol')
 
@@ -454,6 +457,7 @@ widget.Sep(
             foreground = '#6272a4',
             font='Source Code Pro',
             update_interval = 5,
+            mouse_callbacks = {'Button1': cleandisk},
             decorations = [
                 BorderDecoration(
                     colour = '#6272a4',
