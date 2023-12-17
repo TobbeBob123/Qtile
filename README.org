@@ -369,7 +369,9 @@ widget.Sep(
              highlight_color = ["#282a36", "#44475a"],
              this_current_screen_border = '#44475a',
              active = "#8be9fd",
-             inactive = "#ff79c6"
+             inactive = "#ff79c6",
+             disable_drag = True,
+             use_mouse_wheel = False,
             ),
        widget.Sep(
             background = "#282a36",
