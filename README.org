@@ -15,6 +15,7 @@
   - [[#how-to-use-this][How to use this:]]
 -  [[#layouts][Layouts]]
 - [[#statusbar][Statusbar]]
+  - [[#function][Function]]
 - [[#floating-windows-rules][Floating windows rules]]
 - [[#startup][Startup]]
 
@@ -307,7 +308,11 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 window_name = widget.WindowName()
+#+end_src
 
+** Function
+Here do I make functions to my mouse callbacks in the widget.
+#+begin_src python
 def show_cpu():
     qtile.cmd_spawn('kitty -e htop')
 
@@ -333,7 +338,11 @@ def xmenu():
   #      PowerLineDecoration(path="arrow_right")
    # ]
 #}
+#+end_src
 
+*** Widgets
+Widgets is elements who shows status.
+#+begin_src python
 main_bar = bar.Bar(
     [
 widget.Sep(
