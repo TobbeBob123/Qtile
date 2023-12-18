@@ -35,9 +35,9 @@ keys = [
     Key([mod, "shift"], "f", lazy.spawn("pcmanfm"), desc="Launch filebrowser"),
     Key([mod], "m", lazy.spawn("geary"), desc="Launch Mailclient."),
     Key([mod], "f", lazy.spawn("discord"), desc="Launch Discord."),
+    Key([mod], "e", lazy.spawn(myTerm), desc="Launch Terminal."),
 
     #Keys for the scratchpad
-    Key([mod], "e", lazy.group["sp"].dropdown_toggle("term"), desc="Launch terminal"),
     Key([mod, "shift"], "n", lazy.group["sp"].dropdown_toggle("nm"), desc="Launch Nm-connection-editor. An Network GUI manager"),
     Key([mod, "shift"], "l", lazy.group["sp"].dropdown_toggle("audio"), desc="Launch Pavucontrol. An Volume GUI manager"),
     Key([mod], "b", lazy.group["sp"].dropdown_toggle("blue"), desc="Launch Bluetooth Gui."),
@@ -178,7 +178,6 @@ for i in groups:
     )
 
 groups.append(ScratchPad('sp', [
-    DropDown('term', myTerm, width=0.4, x=0.3, y=0.2, opacity=1),
     DropDown('nm', 'nm-connection-editor', width=0.4, x=0.3, y=0.2, opacity=1),
     DropDown('audio', 'pavucontrol', width=0.4, x=0.3, y=0.2, opacity=1),
     DropDown("blue", 'blueman-manager', width=0.4, x=0.3, y=0.2, opacity=1),
@@ -487,7 +486,6 @@ floating_layout = layout.Floating(
         Match(wm_class="stacer"),
         Match(wm_class="Blueman-manager"),
         Match(wm_class="Geary"),
-        Match(wm_class="kitty"),
         Match(wm_class="Bitwarden"),
     ], **layout_theme
 )
