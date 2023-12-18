@@ -28,11 +28,11 @@ This is my config for Qtile.
 * About my Config.
 my config file has a feature that let you see my keybindings with a simple keybind (mod4+s).
 
-You will also need my repo Script to get this to work and my xmobar config to get my bar. So git clone my Script repo with this command.
+You will also need my repo Script to get some of the keys to work, like the screenshot feature. So git clone my Script repo with this command.
 #+begin_src
 $ git clone https://github/TobbeBob123/Script.git ~/Script
 #+end_src
-**** Little info in the xmonad.hs file (Xmonad config).
+**** Little info in the config.py file (QTILE config).
 #+begin_src python
 # Read README.org before you dive into my config and change my config.
 # The best way to read README.org is to see my gitlab at https://gitlab.com/TobbeBob123/Qtile
