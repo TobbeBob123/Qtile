@@ -72,6 +72,7 @@ keys = [
     Key([mod], "i", lazy.layout.shrink(), desc="Grow window to the right"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
     Key([mod], "t", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
+    Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
 
     # Layouts
     Key([mod, "shift"], "Return", lazy.layout.toggle_split(), desc="Toggle between layouts",),
