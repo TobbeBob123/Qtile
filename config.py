@@ -39,7 +39,7 @@ keys = [
 
     #Keys for the scratchpad
     Key([mod, "shift"], "n", lazy.group["sp"].dropdown_toggle("nm"), desc="Launch Nm-connection-editor. An Network GUI manager"),
-    Key([mod, "shift"], "l", lazy.group["sp"].dropdown_toggle("audio"), desc="Launch Pavucontrol. An Volume GUI manager"),
+    Key([mod], "v", lazy.group["sp"].dropdown_toggle("audio"), desc="Launch Pavucontrol. An Volume GUI manager"),
     Key([mod], "b", lazy.group["sp"].dropdown_toggle("blue"), desc="Launch Bluetooth Gui."),
     Key([mod, "shift"], "b", lazy.group["sp"].dropdown_toggle("bit"), desc="Launch bitwarden."),
 
