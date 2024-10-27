@@ -33,7 +33,6 @@ keys = [
     Key([mod, "shift"], "Tab", lazy.spawn(myBrowser), desc="Launch web"),
     Key([mod, "shift"], "t", lazy.spawn("libreoffice"), desc="Launch LibreOffice"),
     Key([mod, "shift"], "f", lazy.spawn("pcmanfm"), desc="Launch filebrowser"),
-    Key([mod], "m", lazy.spawn("geary"), desc="Launch Mailclient."),
     Key([mod], "f", lazy.spawn("discord"), desc="Launch Discord."),
     Key([mod], "e", lazy.spawn(myTerm), desc="Launch Terminal."),
 
