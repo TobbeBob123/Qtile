@@ -499,4 +499,4 @@ def start_once():
     home = os.path.expanduser('~')
     subprocess.call([home + '/.config/qtile/Scripts/autostart.sh'])
 
-wmname = "LG3D"
+wmname = "TobbeOS"
