@@ -19,7 +19,7 @@ mod = "mod4"
 myTerm = "kitty"
 myLauncher = "rofi -show drun"
 myEmacs= "emacsclient -c -a 'emacs' "
-myBrowser= "brave"
+myBrowser= "zen-browser"
 soundDir = "~/Sound/"
 volumeSound = soundDir + "ComputerErrorsoundeffect.mp4"
 mySoundPlayer = "ffplay -nodisp -autoexit "
@@ -127,6 +127,7 @@ groups = [
                     "label": "Web",
                     "matches": [
                         Match(wm_class="Brave-browser"),
+                        Match(wm_class="zen"),
                         Match(wm_class="firefox"),
                     ],
                 },

@@ -64,7 +64,7 @@ mod = "mod4"
 myTerm = "kitty"
 myLauncher = "rofi -show drun"
 myEmacs= "emacsclient -c -a 'emacs' "
-myBrowser= "brave"
+myBrowser= "zen-browser"
 soundDir = "~/Sound/"
 volumeSound = soundDir + "ComputerErrorsoundeffect.mp4"
 mySoundPlayer = "ffplay -nodisp -autoexit "
@@ -86,7 +86,7 @@ This is my keys for my program.
 | mod + e                   | Open Terminal (Kitty)                      |
 | mod + left Shift + Return | Open README.org for xmonad config in Emacs |
 | mod + left Shift + s      | Show alias for fish shell                  |
-| mod + left Shift + Tab    | Open web browser (Brave)                   |
+| mod + left Shift + Tab    | Open web browser (Zen Browser)             |
 | mod + left Shift + q      | kill window                                |
 | mod + d                   | Rofi (Program Launcher)                    |
 |---------------------------+--------------------------------------------|
@@ -197,6 +197,7 @@ groups = [
                     "label": "Web",
                     "matches": [
                         Match(wm_class="Brave-browser"),
+                        Match(wm_class="zen"),
                         Match(wm_class="firefox"),
                     ],
                 },
