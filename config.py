@@ -228,7 +228,8 @@ def updates():
     qtile.cmd_spawn('kitty -e paru')
 
 def cleandisk():
-    qtile.cmd_spawn('kitty -e sudo pacman -Rns $(pacman -Qtdq)')
+    #qtile.cmd_spawn('kitty -e sudo pacman -Rns $(pacman -Qtdq)')
+    qtile.cmd_spawn('kitty -e sudo pacman -Sc')
 
 def Pavucontrol():
     qtile.cmd_spawn('pavucontrol')
