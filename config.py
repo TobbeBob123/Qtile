@@ -29,12 +29,12 @@ keys = [
     #Start_keys
     # Programs
     Key([mod], "d", lazy.spawn(myLauncher), desc="Launch program launcher"),
-    Key([mod], "Return", lazy.spawn(myEmacs), desc="Launch emacs"),
+    Key([mod], "e", lazy.spawn(myEmacs), desc="Launch emacs"),
     Key([mod, "shift"], "Tab", lazy.spawn(myBrowser), desc="Launch web"),
     Key([mod, "shift"], "t", lazy.spawn("libreoffice"), desc="Launch LibreOffice"),
     Key([mod, "shift"], "f", lazy.spawn("pcmanfm"), desc="Launch filebrowser"),
     Key([mod], "f", lazy.spawn("discord"), desc="Launch Discord."),
-    Key([mod], "e", lazy.spawn(myTerm), desc="Launch Terminal."),
+    Key([mod], "Return", lazy.spawn(myTerm), desc="Launch Terminal."),
 
     #Keys for the scratchpad
     Key([mod, "shift"], "n", lazy.group["sp"].dropdown_toggle("nm"), desc="Launch Nm-connection-editor. An Network GUI manager"),
