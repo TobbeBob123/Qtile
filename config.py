@@ -46,7 +46,7 @@ keys = [
     Key([mod], "l", lazy.spawn("light-locker-command -l"), desc="Lock the computer"),
     Key([mod], "p", lazy.spawn(expanduser("~/Script/SkjermBilde.sh"), shell=True), desc="Take fullscreen screenshot"),
     Key([mod, "shift"], "p", lazy.spawn(expanduser("~/Script/Flameshot.sh"), shell=True), desc="Take region screenshot"),
-    Key([mod], "BackSpace", lazy.spawn(expanduser("~/xmenu/xmenu.sh"), shell=True), desc="Xmenu"),
+    Key([mod], "BackSpace", lazy.spawn(expanduser("~/.config/rofi/Scripts/rofi-system-menu.sh"), shell=True), desc="Xmenu"),
 
     # Show keys and fish alias
     Key([mod, "shift"], "s", lazy.spawn(expanduser("~/.config/fish/alias.sh"), shell=True), desc="Show fish alias"),
@@ -236,7 +236,7 @@ def Pavucontrol():
 
 def xmenu():
     home = os.path.expanduser('~')
-    qtile.cmd_spawn(home + '/xmenu/xmenu.sh', shell=True)
+    qtile.cmd_spawn(home + '/.config/rofi/Scripts/rofi-system-menu.sh', shell=True)
 
 #powerline = {
  #   "decorations": [
