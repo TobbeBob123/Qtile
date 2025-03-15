@@ -11,4 +11,6 @@ signal-desktop &
 blueman-applet &
 /usr/bin/emacs --daemon &
 discord &
+swww init &
+swww img ~/Bakgrunner/Zelda/Zelda_03.jpg &
 autolock -time 30 -locker -corners ++-- 'systemctl suspend' &
