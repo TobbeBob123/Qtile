@@ -185,7 +185,7 @@ groups.append(ScratchPad('sp', [
 
 layout_theme = {
     "border_width": 1,
-    "margin": 0,
+    "margin": 7,
     "border_focus": "ff79c6",
     "border_normal": "282a36"
     }
@@ -211,7 +211,7 @@ widget_defaults = dict(
     margin_x = 4,
     padding_y = 2,
     padding_x = 3,
-    padding= 5,
+    padding= 7,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -388,7 +388,7 @@ widget.Sep(
        widget.Systray(),
        widget.Sep(
             foreground = "#282a36"),
-       ], 30, background= "#282a36", foreground="#f8f8f2", font='Source Code Pro', fontsize=12)
+       ], 30, background= "#282a36", foreground="#f8f8f2", font='Source Code Pro', fontsize=12, margin=[10, 10, 0, 10])
 
 main_screen = Screen(top=main_bar)
 screens = [main_screen]
