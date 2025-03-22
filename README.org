@@ -355,7 +355,7 @@ widget.Sep(
             background = "#282a36",
             foreground = "#44475a",
             linewidth = 1,
-            size_percent = 85),
+            size_percent = 30),
         widget.GroupBox(
              fontsize = 11,
              margin_y = 3,
@@ -372,13 +372,6 @@ widget.Sep(
              disable_drag = True,
              use_mouse_wheel = False,
             ),
-       widget.Sep(
-            background = "#282a36",
-            foreground = "#44475a",
-            linewidth = 1,
-            size_percent = 85),
-       widget.CurrentLayout(
-            font='Source Code Pro'),
        widget.Spacer(lenght = 8),
        widget.GenPollCommand(
             cmd = 'uname -r',
@@ -386,18 +379,12 @@ widget.Sep(
             foreground = '#bd93f9',
             font='Source Code Pro',
             update_interval = 5,
-            decorations = [
-                BorderDecoration(
-                    colour = '#bd93f9',
-                    border_width = [0, 0, 2, 0],
-                )
-            ],
        ),
        widget.Sep(
             background = "#282a36",
             foreground = "#44475a",
             linewidth = 1,
-            size_percent = 85),
+            size_percent = 30),
        widget.GenPollCommand(
             fmt = 'Installed:{}',
             cmd = '~/.config/qtile/Scripts/Packagecount.sh',
@@ -406,18 +393,12 @@ widget.Sep(
             font='Source Code Pro',
             update_interval = 5,
             mouse_callbacks = {'Button1': package},
-            decorations = [
-                BorderDecoration(
-                    colour = '#8be9fd',
-                    border_width = [0, 0, 2, 0],
-                )
-            ],
        ),
        widget.Sep(
             background = "#282a36",
             foreground = "#44475a",
             linewidth = 1,
-            size_percent = 85),
+            size_percent = 30),
        widget.CheckUpdates(
             custom_command = 'checkupdates',
             distro = 'Arch',
@@ -427,36 +408,24 @@ widget.Sep(
             font='Source Code Pro',
             update_interval = 5,
             mouse_callbacks = {'Button1': updates},
-            decorations = [
-                BorderDecoration(
-                    colour = '#50fa7b',
-                    border_width = [0, 0, 2, 0],
-                )
-            ],
        ),
        widget.Sep(
             background = "#282a36",
             foreground = "#44475a",
             linewidth = 1,
-            size_percent = 85),
+            size_percent = 30),
        widget.Battery(
             foreground = '#f1fa8c',
             format = '{percent:2.0%}',
             fmt = 'Bat:{}',
             show_short_text = False,
             update_interval = 5,
-            decorations = [
-                BorderDecoration(
-                    colour = '#f1fa8c',
-                    border_width = [0, 0, 2, 0],
-                )
-            ],
             ),
        widget.Sep(
             background = "#282a36",
             foreground = "#44475a",
             linewidth = 1,
-            size_percent = 85),
+            size_percent = 30),
        widget.DF(
             format = '{r: .0f}%',
             fmt = 'Used Disk:{}',
@@ -468,84 +437,52 @@ widget.Sep(
             font='Source Code Pro',
             update_interval = 5,
             mouse_callbacks = {'Button1': cleandisk},
-            decorations = [
-                BorderDecoration(
-                    colour = '#6272a4',
-                    border_width = [0, 0, 2, 0],
-                )
-            ],
        ),
        widget.Sep(
             background = "#282a36",
             foreground = "#44475a",
             linewidth = 1,
-            size_percent = 85),
+            size_percent = 30),
        widget.CPU(
             format = 'CPU: {load_percent}%',
             foreground = "#ff76c6",
             font='Source Code Pro',
             mouse_callbacks = {'Button1': show_cpu},
-            decorations = [
-                BorderDecoration(
-                    colour = '#ff76c6',
-                    border_width = [0, 0, 2, 0],
-                )
-            ],
         ),
        widget.Sep(
             background = "#282a36",
             foreground = "#44475a",
             linewidth = 1,
-            size_percent = 85),
+            size_percent = 30),
        widget.Memory(
             format = '{MemUsed: .0f}{mm}',
             fmt = 'Mem:{} used',
             foreground = '#ffb86c',
             font='Source Code Pro',
             mouse_callbacks = {'Button1': show_cpu},
-            decorations = [
-                BorderDecoration(
-                    colour = '#ffb86c',
-                    border_width = [0, 0, 2, 0],
-                )
-            ],
         ),
        widget.Sep(
             background = "#282a36",
             foreground = "#44475a",
             linewidth = 1,
-            size_percent = 85),
+            size_percent = 30),
        widget.Volume(
             fmt = 'Vol:{}',
             foreground = "#8be9fd",
             font='Source Code Pro',
             mouse_callbacks = {'Button1': Pavucontrol},
-            decorations = [
-                BorderDecoration(
-                    colour = '#8be9fd',
-                    border_width = [0, 0, 2, 0],
-                )
-            ],
         ),
        widget.Sep(
             background = "#282a36",
             foreground = "#44475a",
             linewidth = 1,
-            size_percent = 85),
-       widget.Clock(format="%H:%M:%S %d-%m-%Y", font='Source Code Pro',
-            decorations = [
-                BorderDecoration(
-                    colour = '#f8f8f2',
-                    border_width = [0, 0, 2, 0],
-                )
-            ],
-
-        ),
+            size_percent = 30),
+       widget.Clock(format="%H:%M:%S", font='Source Code Pro'),
        widget.Sep(
             background = "#282a36",
             foreground = "#44475a",
             linewidth = 1,
-            size_percent = 85),
+            size_percent = 30),
        widget.Systray(),
        widget.Sep(
             foreground = "#282a36"),
