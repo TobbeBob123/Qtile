@@ -82,7 +82,7 @@ This is my keys for my program.
 
 | Important program keys    | Description                                |
 |---------------------------+--------------------------------------------|
-| mod + e                   | Open Emacs                                 |
+| mod + E                   | Open Emacs                                 |
 | mod + Return              | Open Terminal (Kitty)                      |
 | mod + left Shift + Return | Open README.org for xmonad config in Emacs |
 | mod + left Shift + s      | Show alias for fish shell                  |
