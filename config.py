@@ -385,6 +385,12 @@ widget.Sep(
             foreground = "#44475a",
             linewidth = 1,
             size_percent = 30),
+       widget.Clock(format="%D", font='Source Code Pro'),
+       widget.Sep(
+            background = "#282a36",
+            foreground = "#44475a",
+            linewidth = 1,
+            size_percent = 30),
        widget.Systray(),
        widget.Sep(
             foreground = "#282a36"),
