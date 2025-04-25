@@ -320,6 +320,7 @@ widget.Sep(
             foreground = '#f1fa8c',
             format = '{percent:2.0%}',
             fmt = 'Bat:{}',
+            unknown_text='Unknown battery',
             show_short_text = False,
             update_interval = 5,
             ),
