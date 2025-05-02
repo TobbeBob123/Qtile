@@ -94,37 +94,37 @@ This is my keys for my program.
 #+begin_src python
 keys = [
     #Start_keys
-    # Programs
+    # Programs.
     Key([mod], "d", lazy.spawn(myLauncher), desc="Launch program launcher"),
     Key([mod], "e", lazy.spawn(myEmacs), desc="Launch emacs"),
     Key([mod, "shift"], "Tab", lazy.spawn(myBrowser), desc="Launch web"),
     Key([mod, "shift"], "t", lazy.spawn("libreoffice"), desc="Launch LibreOffice"),
     Key([mod, "shift"], "f", lazy.spawn("pcmanfm"), desc="Launch filebrowser"),
-    Key([mod], "f", lazy.spawn("discord"), desc="Launch Discord."),
-    Key([mod], "Return", lazy.spawn(myTerm), desc="Launch Terminal."),
+    Key([mod], "f", lazy.spawn("discord"), desc="Launch Discord"),
+    Key([mod], "Return", lazy.spawn(myTerm), desc="Launch Terminal"),
 
-    #Keys for the scratchpad
+    #Keys for the scratchpad.
     Key([mod, "shift"], "n", lazy.group["sp"].dropdown_toggle("nm"), desc="Launch Nm-connection-editor. An Network GUI manager"),
     Key([mod], "v", lazy.group["sp"].dropdown_toggle("audio"), desc="Launch Pavucontrol. An Volume GUI manager"),
-    Key([mod], "b", lazy.group["sp"].dropdown_toggle("blue"), desc="Launch Bluetooth Gui."),
-    Key([mod, "shift"], "b", lazy.group["sp"].dropdown_toggle("bit"), desc="Launch bitwarden."),
+    Key([mod], "b", lazy.group["sp"].dropdown_toggle("blue"), desc="Launch Bluetooth Gui"),
+    Key([mod, "shift"], "b", lazy.group["sp"].dropdown_toggle("bit"), desc="Launch bitwarden"),
 
-    # System
+    # System.
     Key([mod], "l", lazy.spawn("light-locker-command -l"), desc="Lock the computer"),
     Key([mod], "p", lazy.spawn(expanduser("~/Script/SkjermBilde.sh"), shell=True), desc="Take fullscreen screenshot"),
     Key([mod, "shift"], "p", lazy.spawn(expanduser("~/Script/Flameshot.sh"), shell=True), desc="Take region screenshot"),
     Key([mod], "BackSpace", lazy.spawn(expanduser("~/.config/rofi/Scripts/rofi-system-menu.sh"), shell=True), desc="Xmenu"),
 
-    # Show keys and fish alias
+    # Show keys and fish alias.
     Key([mod, "shift"], "s", lazy.spawn(expanduser("~/.config/fish/alias.sh"), shell=True), desc="Show fish alias"),
     Key([mod], "s", lazy.spawn(expanduser("~/.config/qtile/Scripts/keys.sh"), shell=True), desc="Show keys"),
 
-    # Qtile
+    # Qtile.
     Key([mod, "shift"], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "shift"], "e", lazy.shutdown(), desc="Shutdown Qtile"),
 
-    # Window manage
+    # Window manage.
     Key([mod], "g", lazy.layout.left(), desc="Move focus to left"),
     Key([mod], "h", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
@@ -140,8 +140,8 @@ keys = [
     Key([mod], "t", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
 
-    # Layouts
-    Key([mod, "shift"], "Return", lazy.layout.toggle_split(), desc="Toggle between layouts",),
+    # Layouts.
+    Key([mod, "shift"], "Return", lazy.layout.toggle_split(), desc="Toggle between layouts"),
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod, "shift"], "space", lazy.layout.flip(), desc = "Switch window place"),
     Key([mod, "control"], "1", lazy.group.setlayout("monadtall"), desc = "Switch to layout MonadTall"),
@@ -149,12 +149,12 @@ keys = [
     Key([mod, "control"], "3", lazy.group.setlayout("monadwide"), desc = "Switch to layout MonadWide"),
     Key([mod, "control"], "4", lazy.group.setlayout("max"), desc = "Switch to layout Max"),
 
-    # Sound
+    # Sound.
     Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer set Master 5%- unmute")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer set Master 5%+ unmute")),
 
-    # Screenlight
+    # Screenlight.
     Key([], "XF86MonBrightnessDown", lazy.spawn("lux -s 5%"), desc="Decrease screenlight"),
     Key([], "XF86MonBrightnessUp", lazy.spawn("lux -a 5%"), desc="increase screenlight")
 ]
