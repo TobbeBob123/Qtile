@@ -102,8 +102,6 @@ keys = [
     Key([mod, "shift"], "f", lazy.spawn("pcmanfm"), desc="Launch filebrowser"),
     Key([mod], "f", lazy.spawn("discord"), desc="Launch Discord"),
     Key([mod], "Return", lazy.spawn(myTerm), desc="Launch Terminal"),
-
-    #Keys for the scratchpad.
     Key([mod, "shift"], "n", lazy.group["sp"].dropdown_toggle("nm"), desc="Launch Nm-connection-editor. An Network GUI manager"),
     Key([mod], "v", lazy.group["sp"].dropdown_toggle("audio"), desc="Launch Pavucontrol. An Volume GUI manager"),
     Key([mod], "b", lazy.group["sp"].dropdown_toggle("blue"), desc="Launch Bluetooth Gui"),
