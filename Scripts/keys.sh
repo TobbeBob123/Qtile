@@ -6,7 +6,6 @@ sed -n '/Start_keys/,/End_keys/p' ~/.config/qtile/config.py | \
 	sed 's/mod/Super/g' | \
 	sed 's/KeySuper/Key/g' | \
 	sed 's/Key/Super /g' | 
-	sed 's/#Super s/Keys /g' | 
 	sed 's/,/ +/g' |
 	sed 's/.$//' | 
 	sed -e 's/ + lazy[^+]* +/ + /g' | \
