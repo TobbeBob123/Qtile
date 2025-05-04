@@ -14,4 +14,5 @@ sed -n '/Start_keys/,/End_keys/p' ~/.config/qtile/config.py | \
 	sed 's/+  desc = /| /g' | \
 	sed 's/+  shell=//g' | \
 	sed -e 's/# /\n/' | \
+	sed -e 's/True//g' | \
 	yad --text-info --back=#282a36 --fore=#f8f8f2 --geometry=800x500:
