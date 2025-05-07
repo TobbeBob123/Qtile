@@ -16,7 +16,7 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
 mod = "mod4"
-myTerm = "alacritty"
+myTerm = "kitty"
 myLauncher = "rofi -show drun"
 myEmacs= "emacsclient -c -a 'emacs' "
 myBrowser= "zen-browser"
@@ -219,18 +219,18 @@ extension_defaults = widget_defaults.copy()
 window_name = widget.WindowName()
 
 def show_cpu():
-    qtile.cmd_spawn('alacritty -e htop')
+    qtile.cmd_spawn('kitty -e htop')
 
 def package():
     home = os.path.expanduser('~')
     qtile.cmd_spawn(home + '/.config/qtile/Scripts/AntallPakker.sh', shell=True)
 
 def updates():
-    qtile.cmd_spawn('alacritty -e paru')
+    qtile.cmd_spawn('kitty -e paru')
 
 def cleandisk():
     #qtile.cmd_spawn('kitty -e sudo pacman -Rns $(pacman -Qtdq)')
-    qtile.cmd_spawn('alacritty -e sudo pacman -Sc')
+    qtile.cmd_spawn('kitty -e sudo pacman -Sc')
 
 def Pavucontrol():
     qtile.cmd_spawn('pavucontrol')
