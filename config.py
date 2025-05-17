@@ -16,7 +16,7 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
 mod = "mod4"
-myTerm = "kitty"
+myTerm = "alacritty"
 myLauncher = "rofi -show drun"
 myEmacs= "emacsclient -c -a 'emacs' "
 myBrowser= "zen-browser"
@@ -47,7 +47,7 @@ keys = [
     Key([mod], "l", lazy.spawn("light-locker-command -l"), desc="Lock the computer"),
     Key([mod], "p", lazy.spawn(expanduser("~/Script/SkjermBilde.sh"), shell=True), desc="Take fullscreen screenshot"),
     Key([mod, "shift"], "p", lazy.spawn(expanduser("~/Script/Flameshot.sh"), shell=True), desc="Take region screenshot"),
-    Key([mod], "BackSpace", lazy.spawn(expanduser("~/.config/rofi/Scripts/rofi-system-menu.sh"), shell=True), desc="Xmenu"),
+    Key([mod], "BackSpace", lazy.spawn(expanduser("~/.config/rofi/Scripts/rofi-system-menu.sh"), shell=True), desc="Power menu"),
 
     # Show keys and fish alias.
     Key([mod, "shift"], "s", lazy.spawn(expanduser("~/.config/fish/alias.sh"), shell=True), desc="Show fish alias"),
@@ -219,18 +219,18 @@ extension_defaults = widget_defaults.copy()
 window_name = widget.WindowName()
 
 def show_cpu():
-    qtile.cmd_spawn('kitty -e htop')
+    qtile.cmd_spawn('alacritty -e htop')
 
 def package():
     home = os.path.expanduser('~')
     qtile.cmd_spawn(home + '/.config/qtile/Scripts/AntallPakker.sh', shell=True)
 
 def updates():
-    qtile.cmd_spawn('kitty -e paru')
+    qtile.cmd_spawn('alacritty -e paru')
 
 def cleandisk():
-    #qtile.cmd_spawn('kitty -e sudo pacman -Rns $(pacman -Qtdq)')
-    qtile.cmd_spawn('kitty -e sudo pacman -Sc')
+    #qtile.cmd_spawn('alacritty -e sudo pacman -Rns $(pacman -Qtdq)')
+    qtile.cmd_spawn('alacritty -e sudo pacman -Sc')
 
 def Pavucontrol():
     qtile.cmd_spawn('pavucontrol')

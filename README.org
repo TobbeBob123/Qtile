@@ -61,7 +61,7 @@ This is where i define my terminal and my app launcher and etc.
 My modkey is mod4/Win key.
 #+begin_src python
 mod = "mod4"
-myTerm = "kitty"
+myTerm = "alacritty"
 myLauncher = "rofi -show drun"
 myEmacs= "emacsclient -c -a 'emacs' "
 myBrowser= "zen-browser"
@@ -83,7 +83,7 @@ This is my keys for my program.
 | Important program keys    | Description                                |
 |---------------------------+--------------------------------------------|
 | mod + E                   | Open Emacs                                 |
-| mod + Return              | Open Terminal (Kitty)                      |
+| mod + Return              | Open Terminal (Alacritty)                      |
 | mod + left Shift + Return | Open README.org for xmonad config in Emacs |
 | mod + left Shift + s      | Show alias for fish shell                  |
 | mod + left Shift + Tab    | Open web browser (Zen Browser)             |
@@ -114,7 +114,7 @@ keys = [
     Key([mod], "l", lazy.spawn("light-locker-command -l"), desc="Lock the computer"),
     Key([mod], "p", lazy.spawn(expanduser("~/Script/SkjermBilde.sh"), shell=True), desc="Take fullscreen screenshot"),
     Key([mod, "shift"], "p", lazy.spawn(expanduser("~/Script/Flameshot.sh"), shell=True), desc="Take region screenshot"),
-    Key([mod], "BackSpace", lazy.spawn(expanduser("~/.config/rofi/Scripts/rofi-system-menu.sh"), shell=True), desc="Xmenu"),
+    Key([mod], "BackSpace", lazy.spawn(expanduser("~/.config/rofi/Scripts/rofi-system-menu.sh"), shell=True), desc="Power menu"),
 
     # Show keys and fish alias.
     Key([mod, "shift"], "s", lazy.spawn(expanduser("~/.config/fish/alias.sh"), shell=True), desc="Show fish alias"),
@@ -257,7 +257,7 @@ for i in groups:
 This is windows that always run and will always spawning in floating for easy access to a window or program.
 
 ** How to use this:
-When you open a program in scratchpad, for example if you want to open kitty the terminal, the keybindings for that is mode+Return kitty will launch. And if you want to close it again don't do it the normal way. You must do the same keybindings to close scratchpad as you did when you open scratchpad. This will not kill the program, just move it away. This is basicly the same as minimize for KDE or Microsoft Windows.
+When you open a program in scratchpad, for example if you want to open alacritty the terminal, the keybindings for that is mode+Return Alacritty will launch. And if you want to close it again don't do it the normal way. You must do the same keybindings to close scratchpad as you did when you open scratchpad. This will not kill the program, just move it away. This is basicly the same as minimize for KDE or Microsoft Windows.
 #+begin_src python
 groups.append(ScratchPad('sp', [
     DropDown('nm', 'nm-connection-editor', width=0.4, x=0.3, y=0.2, opacity=1),
@@ -313,18 +313,18 @@ window_name = widget.WindowName()
 Here do I make functions to my mouse callbacks in the widget.
 #+begin_src python
 def show_cpu():
-    qtile.cmd_spawn('kitty -e htop')
+    qtile.cmd_spawn('alacritty -e htop')
 
 def package():
     home = os.path.expanduser('~')
     qtile.cmd_spawn(home + '/.config/qtile/Scripts/AntallPakker.sh', shell=True)
 
 def updates():
-    qtile.cmd_spawn('kitty -e paru')
+    qtile.cmd_spawn('alacritty -e paru')
 
 def cleandisk():
-    #qtile.cmd_spawn('kitty -e sudo pacman -Rns $(pacman -Qtdq)')
-    qtile.cmd_spawn('kitty -e sudo pacman -Sc')
+    #qtile.cmd_spawn('alacritty -e sudo pacman -Rns $(pacman -Qtdq)')
+    qtile.cmd_spawn('alacritty -e sudo pacman -Sc')
 
 def Pavucontrol():
     qtile.cmd_spawn('pavucontrol')
