@@ -43,17 +43,10 @@ These import Qtile module that are needed.
 #+begin_src python
 import os
 from os.path import expanduser
-import re
-import socket
 import subprocess
-from libqtile import qtile, widget, extension, bar, layout, hook
-import qtile_extras
-from qtile_extras.widget.decorations import PowerLineDecoration
-from qtile_extras import widget
-from qtile_extras.widget.decorations import BorderDecoration
-from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown, Rule
+from libqtile import qtile, widget, bar, layout, hook
+from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
 #+end_src
 
 * Variable
@@ -61,7 +54,7 @@ This is where i define my terminal and my app launcher and etc.
 My modkey is mod4/Win key.
 #+begin_src python
 mod = "mod4"
-myTerm = "alacritty"
+myTerm = "wezterm"
 myLauncher = "rofi -show drun"
 myEmacs= "emacsclient -c -a 'emacs' "
 myBrowser= "zen-browser"
@@ -83,7 +76,7 @@ This is my keys for my program.
 | Important program keys    | Description                                |
 |---------------------------+--------------------------------------------|
 | mod + E                   | Open Emacs                                 |
-| mod + Return              | Open Terminal (Alacritty)                      |
+| mod + Return              | Open Terminal (Wezterm)               |
 | mod + left Shift + Return | Open README.org for xmonad config in Emacs |
 | mod + left Shift + s      | Show alias for fish shell                  |
 | mod + left Shift + Tab    | Open web browser (Zen Browser)             |
@@ -103,6 +96,7 @@ keys = [
     Key([mod], "f", lazy.spawn("discord"), desc="Launch Discord"),
     Key([mod], "Return", lazy.spawn(myTerm), desc="Launch Terminal"),
     Key([mod], "m", lazy.spawn("mailspring"), desc="Launch mailclient"),
+    Key([mod, "control"], "b", lazy.spawn(expanduser("~/Script/bit.sh"), shell=True), desc="Bitwarden cli"),
 
     # Scratchpad.
     Key([mod, "shift"], "n", lazy.group["sp"].dropdown_toggle("nm"), desc="Launch Nm-connection-editor. An Network GUI manager"),
@@ -257,7 +251,7 @@ for i in groups:
 This is windows that always run and will always spawning in floating for easy access to a window or program.
 
 ** How to use this:
-When you open a program in scratchpad, for example if you want to open alacritty the terminal, the keybindings for that is mode+Return Alacritty will launch. And if you want to close it again don't do it the normal way. You must do the same keybindings to close scratchpad as you did when you open scratchpad. This will not kill the program, just move it away. This is basicly the same as minimize for KDE or Microsoft Windows.
+When you open a program in scratchpad, for example if you want to open Wezterm the terminal, the keybindings for that is mode+Return Wezterm will launch. And if you want to close it again don't do it the normal way. You must do the same keybindings to close scratchpad as you did when you open scratchpad. This will not kill the program, just move it away. This is basicly the same as minimize for KDE or Microsoft Windows.
 #+begin_src python
 groups.append(ScratchPad('sp', [
     DropDown('nm', 'nm-connection-editor', width=0.4, x=0.3, y=0.2, opacity=1),
@@ -313,18 +307,18 @@ window_name = widget.WindowName()
 Here do I make functions to my mouse callbacks in the widget.
 #+begin_src python
 def show_cpu():
-    qtile.cmd_spawn('alacritty -e htop')
+    qtile.cmd_spawn('wezterm -e htop')
 
 def package():
     home = os.path.expanduser('~')
     qtile.cmd_spawn(home + '/.config/qtile/Scripts/AntallPakker.sh', shell=True)
 
 def updates():
-    qtile.cmd_spawn('alacritty -e paru')
+    qtile.cmd_spawn('wezterm -e paru')
 
 def cleandisk():
-    #qtile.cmd_spawn('alacritty -e sudo pacman -Rns $(pacman -Qtdq)')
-    qtile.cmd_spawn('alacritty -e sudo pacman -Sc')
+    #qtile.cmd_spawn('wezterm -e sudo pacman -Rns $(pacman -Qtdq)')
+    qtile.cmd_spawn('wezterm -e sudo pacman -Sc')
 
 def Pavucontrol():
     qtile.cmd_spawn('pavucontrol')

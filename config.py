@@ -3,20 +3,13 @@
 
 import os
 from os.path import expanduser
-import re
-import socket
 import subprocess
-from libqtile import qtile, widget, extension, bar, layout, hook
-import qtile_extras
-from qtile_extras.widget.decorations import PowerLineDecoration
-from qtile_extras import widget
-from qtile_extras.widget.decorations import BorderDecoration
-from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown, Rule
+from libqtile import qtile, widget, bar, layout, hook
+from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
 
 mod = "mod4"
-myTerm = "alacritty"
+myTerm = "wezterm"
 myLauncher = "rofi -show drun"
 myEmacs= "emacsclient -c -a 'emacs' "
 myBrowser= "zen-browser"
@@ -36,6 +29,7 @@ keys = [
     Key([mod], "f", lazy.spawn("discord"), desc="Launch Discord"),
     Key([mod], "Return", lazy.spawn(myTerm), desc="Launch Terminal"),
     Key([mod], "m", lazy.spawn("mailspring"), desc="Launch mailclient"),
+    Key([mod, "control"], "b", lazy.spawn(expanduser("~/Script/bit.sh"), shell=True), desc="Bitwarden cli"),
 
     # Scratchpad.
     Key([mod, "shift"], "n", lazy.group["sp"].dropdown_toggle("nm"), desc="Launch Nm-connection-editor. An Network GUI manager"),
@@ -219,18 +213,18 @@ extension_defaults = widget_defaults.copy()
 window_name = widget.WindowName()
 
 def show_cpu():
-    qtile.cmd_spawn('alacritty -e htop')
+    qtile.cmd_spawn('wezterm -e htop')
 
 def package():
     home = os.path.expanduser('~')
     qtile.cmd_spawn(home + '/.config/qtile/Scripts/AntallPakker.sh', shell=True)
 
 def updates():
-    qtile.cmd_spawn('alacritty -e paru')
+    qtile.cmd_spawn('wezterm -e paru')
 
 def cleandisk():
-    #qtile.cmd_spawn('alacritty -e sudo pacman -Rns $(pacman -Qtdq)')
-    qtile.cmd_spawn('alacritty -e sudo pacman -Sc')
+    #qtile.cmd_spawn('wezterm -e sudo pacman -Rns $(pacman -Qtdq)')
+    qtile.cmd_spawn('wezterm -e sudo pacman -Sc')
 
 def Pavucontrol():
     qtile.cmd_spawn('pavucontrol')
