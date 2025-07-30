@@ -96,13 +96,12 @@ keys = [
     Key([mod], "f", lazy.spawn("discord"), desc="Launch Discord"),
     Key([mod], "Return", lazy.spawn(myTerm), desc="Launch Terminal"),
     Key([mod], "m", lazy.spawn("mailspring"), desc="Launch mailclient"),
-    Key([mod, "control"], "b", lazy.spawn(expanduser("~/Script/bit.sh"), shell=True), desc="Bitwarden cli"),
+    Key([mod, "shift"], "b", lazy.spawn(expanduser("~/Script/bit.sh"), shell=True), desc="Bitwarden cli"),
 
     # Scratchpad.
     Key([mod, "shift"], "n", lazy.group["sp"].dropdown_toggle("nm"), desc="Launch Nm-connection-editor. An Network GUI manager"),
     Key([mod], "v", lazy.group["sp"].dropdown_toggle("audio"), desc="Launch Pavucontrol. An Volume GUI manager"),
     Key([mod], "b", lazy.group["sp"].dropdown_toggle("blue"), desc="Launch Bluetooth Gui"),
-    Key([mod, "shift"], "b", lazy.group["sp"].dropdown_toggle("bit"), desc="Launch bitwarden"),
 
     # System.
     Key([mod], "l", lazy.spawn("light-locker-command -l"), desc="Lock the computer"),
@@ -257,7 +256,6 @@ groups.append(ScratchPad('sp', [
     DropDown('nm', 'nm-connection-editor', width=0.4, x=0.3, y=0.2, opacity=1),
     DropDown('audio', 'pavucontrol', width=0.4, x=0.3, y=0.2, opacity=1),
     DropDown("blue", 'blueman-manager', width=0.4, x=0.3, y=0.2, opacity=1),
-    DropDown("bit", 'bitwarden-desktop', width=0.4, x=0.3, y=0.2, opacity=1),
 ]))
 #+end_src
 
