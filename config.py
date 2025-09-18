@@ -29,12 +29,12 @@ keys = [
     Key([mod], "f", lazy.spawn("discord"), desc="Launch Discord"),
     Key([mod], "Return", lazy.spawn(myTerm), desc="Launch Terminal"),
     Key([mod], "m", lazy.spawn("mailspring"), desc="Launch mailclient"),
-    Key([mod, "shift"], "b", lazy.spawn(expanduser("~/Script/bit.sh"), shell=True), desc="Bitwarden cli"),
+    Key([mod], "b", lazy.spawn(expanduser("~/Script/bit.sh"), shell=True), desc="Bitwarden cli"),
 
     # Scratchpad.
     Key([mod, "shift"], "n", lazy.group["sp"].dropdown_toggle("nm"), desc="Launch Nm-connection-editor. An Network GUI manager"),
     Key([mod], "v", lazy.group["sp"].dropdown_toggle("audio"), desc="Launch Pavucontrol. An Volume GUI manager"),
-    Key([mod], "b", lazy.group["sp"].dropdown_toggle("blue"), desc="Launch Bluetooth Gui"),
+    Key([mod, "shift"], "b", lazy.group["sp"].dropdown_toggle("blue"), desc="Launch Bluetooth Gui"),
 
     # System.
     Key([mod], "l", lazy.spawn("light-locker-command -l"), desc="Lock the computer"),
