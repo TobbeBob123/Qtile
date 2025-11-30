@@ -179,7 +179,7 @@ groups.append(ScratchPad('sp', [
 
 layout_theme = {
     "border_width": 1,
-    #"margin": 7,
+    #"margin": 10,
     "border_focus": "ff79c6",
     "border_normal": "282a36"
     }
@@ -212,7 +212,7 @@ extension_defaults = widget_defaults.copy()
 window_name = widget.WindowName()
 
 def show_cpu():
-    qtile.cmd_spawn('wezterm -e htop')
+    qtile.cmd_spawn('wezterm -e btop')
 
 def package():
     home = os.path.expanduser('~')
