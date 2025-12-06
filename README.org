@@ -290,7 +290,7 @@ Here do I define my statusbar.
 #+begin_src python
 widget_defaults = dict(
     font='Source Code Pro',
-    fontsize = 11,
+    fontsize = 9,
     margin_y = 3,
     margin_x = 4,
     padding_y = 2,

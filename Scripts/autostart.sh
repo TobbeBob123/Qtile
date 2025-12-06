@@ -12,3 +12,4 @@ blueman-applet &
 /usr/bin/emacs --daemon &
 discord &
 autolock -time 30 -locker -corners ++-- 'systemctl suspend' &
+setxkbmap -option caps:swapescape &
