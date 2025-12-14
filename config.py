@@ -16,6 +16,7 @@ myBrowser= "zen-browser"
 soundDir = "~/Sound/"
 volumeSound = soundDir + "ComputerErrorsoundeffect.mp4"
 mySoundPlayer = "ffplay -nodisp -autoexit "
+softwareCenter = "pamac-manager"
 _NET_WM_STRUT_PARTIAL = 1
 
 keys = [
@@ -29,6 +30,7 @@ keys = [
     Key([mod, "shift"], "f", lazy.spawn("pcmanfm"), desc="Launch filebrowser"),
     Key([mod], "f", lazy.spawn("discord"), desc="Launch Discord"),
     Key([mod], "Return", lazy.spawn(myTerm), desc="Launch Terminal"),
+    Key([mod, "shift"], "Return", lazy.spawn(softwareCenter), desc="Launch software center"),
     Key([mod], "m", lazy.spawn("mailspring"), desc="Launch mailclient"),
     Key([mod], "b", lazy.spawn(expanduser("~/Script/bit.sh"), shell=True), desc="Bitwarden cli"),
 
@@ -69,7 +71,6 @@ keys = [
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
 
     # Layouts.
-    Key([mod, "shift"], "Return", lazy.layout.toggle_split(), desc="Toggle between layouts"),
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod, "shift"], "space", lazy.layout.flip(), desc = "Switch window place"),
     Key([mod, "control"], "1", lazy.group.setlayout("monadtall"), desc = "Switch to layout MonadTall"),
@@ -219,7 +220,7 @@ def package():
     qtile.cmd_spawn(home + '/.config/qtile/Scripts/AntallPakker.sh', shell=True)
 
 def updates():
-    qtile.cmd_spawn('wezterm -e paru')
+    qtile.cmd_spawn('wezterm -e yay')
 
 def cleandisk():
     #qtile.cmd_spawn('wezterm -e sudo pacman -Rns $(pacman -Qtdq)')
@@ -429,6 +430,7 @@ floating_layout = layout.Floating(
         Match(wm_class="Geary"),
         Match(wm_class="Bitwarden"),
         Match(wm_class="zenity"),
+        Match(wm_class="Pamac-manager"),
     ], **layout_theme
 )
 # If things like steam games want to auto-minimize themselves when losing
