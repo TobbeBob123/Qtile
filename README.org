@@ -99,7 +99,7 @@ keys = [
     Key([mod], "Return", lazy.spawn(myTerm), desc="Launch Terminal"),
     Key([mod, "shift"], "Return", lazy.spawn(softwareCenter), desc="Launch software center"),
     Key([mod], "m", lazy.spawn("mailspring"), desc="Launch mailclient"),
-    Key([mod], "b", lazy.spawn(expanduser("~/Script/bit.sh"), shell=True), desc="Bitwarden cli"),
+    Key([mod], "b", lazy.spawn("wezterm -e bitwarden_fuzzy_finder --login --hidden --not-open"), desc="Launch bitwarden fuzzy"),
 
     # Scratchpad.
     Key([mod, "shift"], "n", lazy.group["sp"].dropdown_toggle("nm"), desc="Launch Nm-connection-editor. An Network GUI manager"),
