@@ -24,15 +24,15 @@ keys = [
     # Programs.
     Key([mod], "d", lazy.spawn(myLauncher), desc="Launch program launcher"),
     Key([mod], "e", lazy.spawn(myEmacs), desc="Launch emacs"),
-    Key([mod, "shift"], "Tab", lazy.spawn(myBrowser), desc="Launch web"),
-    Key([mod, "control"], "Tab", lazy.spawn("web-search"), desc="Launch web-search (custom program)"),
+    Key([mod], "w", lazy.spawn(myBrowser), desc="Launch web"),
+    Key([mod, "shift"], "w", lazy.spawn("web-search"), desc="Launch web-search (custom program)"),
     Key([mod, "shift"], "t", lazy.spawn("libreoffice"), desc="Launch LibreOffice"),
     Key([mod, "shift"], "f", lazy.spawn("pcmanfm"), desc="Launch filebrowser"),
     Key([mod], "f", lazy.spawn("discord"), desc="Launch Discord"),
     Key([mod], "Return", lazy.spawn(myTerm), desc="Launch Terminal"),
     Key([mod, "shift"], "Return", lazy.spawn(softwareCenter), desc="Launch software center"),
     Key([mod], "m", lazy.spawn("mailspring"), desc="Launch mailclient"),
-    Key([mod], "b", lazy.spawn("wezterm -e bitwarden_fuzzy_finder --login --hidden --not-open"), desc="Launch bitwarden fuzzy"),
+    Key([mod], "b", lazy.spawn("wezterm -e bff --login --hidden --not-open"), desc="Launch bitwarden fuzzy"),
 
     # Scratchpad.
     Key([mod, "shift"], "n", lazy.group["sp"].dropdown_toggle("nm"), desc="Launch Nm-connection-editor. An Network GUI manager"),
