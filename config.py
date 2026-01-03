@@ -300,7 +300,7 @@ widget.Sep(
             linewidth = 1,
             size_percent = 30),
        widget.CheckUpdates(
-            custom_command = 'checkupdates',
+            custom_command = 'yay -Qu',
             distro = 'Arch',
             colour_have_updates = 'ff5555',
             colour_no_updates = '50fa7b',
