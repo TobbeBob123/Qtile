@@ -302,13 +302,12 @@ widget.Sep(
             linewidth = 1,
             size_percent = 30),
        widget.CheckUpdates(
-            custom_command = 'yay -Qu',
-            distro = 'Arch',
+            distro = 'Arch_yay',
             colour_have_updates = 'ff5555',
             colour_no_updates = '50fa7b',
             no_update_string = 'no updates',
             font='Source Code Pro',
-            update_interval = 5,
+            update_interval = 1800,
             mouse_callbacks = {'Button1': updates},
        ),
        widget.Sep(
