@@ -125,6 +125,7 @@ groups = [
                         Match(wm_class="Brave-browser"),
                         Match(wm_class="zen"),
                         Match(wm_class="firefox"),
+                        Match(wm_class="Helium"),
                     ],
                 },
                 {
@@ -268,6 +269,7 @@ widget.Sep(
              inactive = "#ff79c6",
              disable_drag = True,
              use_mouse_wheel = False,
+             urgent_alert_method = False,
             ),
        widget.CurrentLayout(
             foreground='#bd93f9'
