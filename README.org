@@ -405,7 +405,7 @@ widget.Sep(
             colour_no_updates = '50fa7b',
             no_update_string = 'no updates',
             font='Source Code Pro',
-            update_interval = 1800,
+            update_interval = 5,
             mouse_callbacks = {'Button1': updates},
        ),
        widget.Sep(
