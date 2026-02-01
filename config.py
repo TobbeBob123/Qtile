@@ -432,6 +432,7 @@ floating_layout = layout.Floating(
         Match(wm_class="Bitwarden"),
         Match(wm_class="zenity"),
         Match(wm_class="Pamac-manager"),
+        Match(wm_class="Localsend"),
     ], **layout_theme
 )
 # If things like steam games want to auto-minimize themselves when losing
